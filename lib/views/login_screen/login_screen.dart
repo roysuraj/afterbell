@@ -1,3 +1,5 @@
+import 'package:after_bell_students/views/classscreen/classscreen.dart';
+import 'package:after_bell_students/views/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -143,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             TextSpan(
-              text: 'for Continue!',
+              text: 'to Continue!',
             ),
           ],
         ),
@@ -299,7 +301,11 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ],
       ),
-      child: Text(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(primary: const Color(0xFF21899C)),
+        onPressed: () {Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const classscreen()));  },
+        child:Text(
         'Sign in',
         style: GoogleFonts.inter(
           fontSize: 16.0,
@@ -308,6 +314,7 @@ class _LoginScreenState extends State<LoginScreen> {
           height: 1.5,
         ),
         textAlign: TextAlign.center,
+        ),
       ),
     );
   }
